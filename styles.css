@@ -1,0 +1,69 @@
+:root {
+  --blue: #2463eb;
+  --footer-bg-color: #1e293b;
+  --orange-btn-bg-color: #f59e0b;
+  --grey-section-bg-color: #eaeef4;
+  --grey-text-color: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  min-height: 100vh;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header area================================== */
+header {
+  height: 44px;
+}
+
+/* main area================================== */
+main {
+  flex: 1;
+}
+
+main > .hero-area,
+main > .projects-area {
+  background-color: var(--grey-section-bg-color);
+}
+
+/* sections area================================== */
+section {
+  padding: 4rem 0;
+}
+
+/* section hero area================================== */
+main > .hero-area {
+}
+
+/* section about area================================== */
+main > .about-area {
+}
+
+/* section projects area================================== */
+main > .projects-area {
+}
+
+/* section contact area================================== */
+main > .contact-area {
+}
+
+/* footer area================================== */
+/* make footer sticky */
+footer {
+  background-color: var(--footer-bg-color);
+  height: 57px;
+}
