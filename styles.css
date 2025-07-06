@@ -1,8 +1,10 @@
 :root {
   --blue: #2463eb;
+  --dark-blue: #2056E5;
   --footer-bg-color: #1e293b;
   --orange-btn-bg-color: #f59e0b;
   --grey-section-bg-color: #eaeef4;
+  --grey-image-bg-color: #e2e8f0;
   --grey-text-color: #64748b;
 }
 
@@ -25,9 +27,23 @@ body {
   flex-direction: column;
 }
 
+button {
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
 /* header area================================== */
 header {
-  height: 44px;
+  margin: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+header > .dev-name > h2 {
+  color: var(--blue);
 }
 
 /* main area================================== */
@@ -42,11 +58,71 @@ main > .projects-area {
 
 /* sections area================================== */
 section {
-  padding: 4rem 0;
+  padding: 4rem 2rem;
 }
 
 /* section hero area================================== */
 main > .hero-area {
+  box-shadow: 0px 30px 21px -34px rgba(0, 0, 0, 0.32) inset;
+  display: flex;
+  /* display wrap for small screens*/
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+main > .hero-area > * {
+  width: 100%;
+  padding: 0;
+}
+
+main > .hero-area > .info-area,
+main > .hero-area > .profile-image-area {
+  /* set full width for wrapping in small screens*/
+  width: 100%;
+}
+
+main > .hero-area > .info-area {
+  display: flex;
+  /* display wrap for small screens*/
+  flex-wrap: wrap;
+}
+
+main > .hero-area > .info-area > * {
+  /* set full width for wrapping in small screens*/
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+main > .hero-area > .info-area button {
+  background-color: var(--blue);
+  padding: 1rem 2rem;
+}
+
+/* add changed bg */
+main > .hero-area > .info-area button:hover {
+  cursor: pointer;
+    background-color: var(--dark-blue);
+}
+
+main > .hero-area > .profile-image-area {
+    margin-top: 1rem;
+}
+
+main > .hero-area > .profile-image-area > .image-container {
+  width: 40vw;
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  margin: auto;
+}
+
+main > .hero-area > .profile-image-area > .image-container > img {
+  width: 100%;
+  height: 100%;
+  /* Keep image aspect and fill container */
+  object-fit: cover;
+  /* Focus on right side of image */
+  object-position: 100% 50%; 
+  border-radius: 50%;
 }
 
 /* section about area================================== */
@@ -66,4 +142,11 @@ main > .contact-area {
 footer {
   background-color: var(--footer-bg-color);
   height: 57px;
+}
+
+@media (min-width: 901px) {
+  /* instructions: */
+  section {
+    padding: 4rem;
+  }
 }
