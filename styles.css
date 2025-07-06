@@ -6,7 +6,7 @@
   --dark-orange-btn-bg-color: #dd9416;
   --grey-section-bg-color: #eaeef4;
   --grey-image-bg-color: #e2e8f0;
-  --grey-text-color: #64748b;
+  --body-grey-text-color: #b0b7c3;
 }
 
 * {
@@ -21,10 +21,12 @@ html {
 }
 
 body {
+  max-width: 1200px;
+  min-width: 300px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
+  color: var(--body-grey-text-color);
   line-height: 1.6;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
 }
@@ -34,6 +36,34 @@ button {
   padding: 1rem;
   border-radius: 10px;
   border: none;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+a {
+  color: black;
+}
+
+h4 {
   font-weight: bold;
 }
 
@@ -49,13 +79,22 @@ section {
 
 /* header area================================== */
 header {
-  margin: 1rem 3rem;
+  margin: 1rem 2rem;
   display: flex;
   justify-content: space-between;
 }
 
-header > .dev-name > h2 {
+header > .dev-name > h3 {
   color: var(--blue);
+}
+
+.hamburger {
+  width: 32px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 /* main area================================== */
@@ -108,9 +147,9 @@ main > .hero-area > .info-area button {
 
 /* add changed bg */
 main > .hero-area > .info-area button:hover {
-    cursor: pointer;
-    background-color: var(--dark-blue);
-    transform: scale(1.01);
+  cursor: pointer;
+  background-color: var(--dark-blue);
+  transform: scale(1.01);
 }
 
 main > .hero-area > .profile-image-area {
@@ -159,6 +198,7 @@ main > .about-area > .content-area {
 }
 
 main > .about-area > .skills-area > .graph > div {
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -182,7 +222,6 @@ main > .about-area > .skills-area > .graph > div {
 /* section projects area================================== */
 main > .projects-area > * {
   width: 100%;
-
   margin-bottom: 2rem;
 }
 
@@ -192,6 +231,7 @@ main > .projects-area > .headline {
 
 main > .projects-area > .cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -200,9 +240,12 @@ main > .projects-area > .cards > * {
 }
 
 main > .projects-area > .cards > .card {
+  height: 100%;
   min-height: 400px;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0px 5px 11px 1px rgba(0, 0, 0, 0.78);
   border-radius: 10px;
 }
@@ -227,31 +270,37 @@ main > .projects-area > .cards > .card {
   width: 100%;
   height: 100%;
   /* Keep image aspect and fill container */
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .card-bottom {
   border-radius: 0 0 10px 10px;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 
 .card-bottom > * {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .card-bottom > div {
   width: 100%;
 }
 
-.card-bottom > button {
+.card-bottom a {
+  width: 100%;
+}
+
+.card-bottom button {
+  width: 100%;
   background-color: var(--orange-btn-bg-color);
   transition: background-color 0.1s, transform 0.1s;
 }
-.card-bottom > button:hover {
-    cursor: pointer;
-    background-color: var(--dark-orange-btn-bg-color);
-    transform: scale(1.01)
+.card-bottom button:hover {
+  cursor: pointer;
+  background-color: var(--dark-orange-btn-bg-color);
+  transform: scale(1.01);
 }
 
 /* section contact area================================== */
@@ -284,7 +333,7 @@ fieldset > * {
 
 input,
 textarea {
-  border: solid 2px;
+  border: solid 2px var(--body-grey-text-color);
   border-radius: 5px;
   padding: 0.5rem;
 }
@@ -304,6 +353,10 @@ form > button:hover {
   margin: 1rem;
 }
 
+.contact-area > .contact-info-area a {
+  color: var(--body-grey-text-color);
+}
+
 .contact-area > .contact-info-area > .icons-area {
   display: flex;
   justify-content: center;
@@ -311,38 +364,27 @@ form > button:hover {
 }
 
 .contact-area > .contact-info-area > .icons-area > a {
-    /* background-color: var(--blue); */
-    width: 3rem;
-    /* height: 3rem; */
-    /* border-radius: 50%; */
-    /* text-decoration: none; */
-    transition: background-color 0.1s, transform 0.1s;
+  width: 3rem;
+  transition: background-color 0.1s, transform 0.1s;
 }
 
-.contact-area > .contact-info-area > .icons-area > a >img{
-    object-fit: contain;
-    border-radius: 50%;
-    width: 48px;
- 
-}
-
-.contact-area > .contact-info-area > p > a{
-    text-decoration: none;
+.contact-area > .contact-info-area > .icons-area > a > img {
+  object-fit: contain;
+  border-radius: 50%;
+  width: 48px;
 }
 
 .contact-area > .contact-info-area > p {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.contact-area > .contact-info-area > p img{
-    width: 2rem;
+.contact-area > .contact-info-area > p img {
+  width: 2rem;
 }
 
 .contact-area > .contact-info-area > .icons-area > a:hover {
-  /* background-color: var(--dark-blue); */
   transform: scale(1.12) rotate(-6deg);
 }
 
@@ -350,7 +392,6 @@ form > button:hover {
 /* make footer sticky */
 footer {
   background-color: var(--footer-bg-color);
-  color: white;
   text-align: center;
   padding: 1rem;
 }
@@ -359,5 +400,37 @@ footer {
   /* instructions: */
   section {
     padding: 4rem;
+  }
+
+  main > .hero-area > .info-area,
+  main > .hero-area > .profile-image-area {
+    width: 50%;
+    padding: 0;
+  }
+
+  main > .hero-area > .info-area,
+  main > .about-area > .content-area {
+    text-align: left;
+  }
+  main > .about-area > .content-area {
+    width: 70%;
+  }
+  main > .about-area > .skills-area {
+    width: 30%;
+  }
+
+  main > .about-area > .content-area > p {
+    padding-right: 3rem;
+  }
+
+  main>.projects-area > .cards {
+    width: 100%;
+    justify-content: space-between
+}
+
+  .projects-area > .cards > .card {
+    max-width: none;
+    max-height: 300px;
+    width: 30%;
   }
 }
