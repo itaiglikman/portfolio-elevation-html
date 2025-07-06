@@ -3,6 +3,7 @@
   --dark-blue: #2056e5;
   --footer-bg-color: #1e293b;
   --orange-btn-bg-color: #f59e0b;
+  --dark-orange-btn-bg-color: #dd9416;
   --grey-section-bg-color: #eaeef4;
   --grey-image-bg-color: #e2e8f0;
   --grey-text-color: #64748b;
@@ -23,6 +24,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
 }
@@ -33,6 +35,16 @@ button {
   border-radius: 10px;
   border: none;
   font-weight: bold;
+}
+
+label,
+p.skill {
+  font-weight: 500;
+}
+
+/* sections area================================== */
+section {
+  padding: 4rem 2rem;
 }
 
 /* header area================================== */
@@ -54,11 +66,6 @@ main {
 main > .hero-area,
 main > .projects-area {
   background-color: var(--grey-section-bg-color);
-}
-
-/* sections area================================== */
-section {
-  padding: 4rem 2rem;
 }
 
 /* section hero area================================== */
@@ -96,26 +103,28 @@ main > .hero-area > .info-area > * {
 main > .hero-area > .info-area button {
   background-color: var(--blue);
   padding: 1rem 2rem;
+  transition: background-color 0.1s, transform 0.1s;
 }
 
 /* add changed bg */
 main > .hero-area > .info-area button:hover {
-  cursor: pointer;
-  background-color: var(--dark-blue);
+    cursor: pointer;
+    background-color: var(--dark-blue);
+    transform: scale(1.01);
 }
 
 main > .hero-area > .profile-image-area {
   margin-top: 1rem;
 }
 
-main > .hero-area > .profile-image-area > .image-container {
+main > .hero-area > .profile-image-area > .profile-image-container {
   width: 40vw;
   max-width: 300px;
   aspect-ratio: 1/1;
   margin: auto;
 }
 
-main > .hero-area > .profile-image-area > .image-container > img {
+main > .hero-area > .profile-image-area > .profile-image-container > img {
   width: 100%;
   height: 100%;
   /* Keep image aspect and fill container */
@@ -138,23 +147,21 @@ main > .about-area > * {
   padding: 0;
 }
 
-main > .about-area > .content-area > * ,
+/* set full width for wrapping in small screens*/
+/* main > .about-area > .content-area > * ,
 main > .about-area > .skills-area > * {
-    /* set full width for wrapping in small screens*/
     width: 100%;
     margin-bottom: 1rem;
+} */
+
+main > .about-area > .content-area {
+  margin-bottom: 2rem;
 }
 
-main > .about-area > .content-area{
-    margin-bottom: 2rem;
-}
-
-
-main > .about-area > .skills-area > .graph >div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+main > .about-area > .skills-area > .graph > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .progress-bar {
@@ -172,21 +179,180 @@ main > .about-area > .skills-area > .graph >div{
   transition: width 0.3s ease;
 }
 
-
-
 /* section projects area================================== */
-main > .projects-area {
+main > .projects-area > * {
+  width: 100%;
+
+  margin-bottom: 2rem;
+}
+
+main > .projects-area > .headline {
+  text-align: center;
+}
+
+main > .projects-area > .cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main > .projects-area > .cards > * {
+  margin-bottom: 2rem;
+}
+
+main > .projects-area > .cards > .card {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 5px 11px 1px rgba(0, 0, 0, 0.78);
+  border-radius: 10px;
+}
+
+.card-top,
+.card-bottom {
+  flex: 1 1 0;
+}
+
+.card-top {
+  border-radius: 10px 10px 0 0;
+  background-color: var(--grey-text-color);
+}
+
+.card-top > .project-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.card-top > .project-image-container > img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
+  /* Keep image aspect and fill container */
+  object-fit: cover;
+}
+
+.card-bottom {
+  border-radius: 0 0 10px 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-bottom > * {
+  margin-bottom: 1rem;
+}
+.card-bottom > div {
+  width: 100%;
+}
+
+.card-bottom > button {
+  background-color: var(--orange-btn-bg-color);
+  transition: background-color 0.1s, transform 0.1s;
+}
+.card-bottom > button:hover {
+    cursor: pointer;
+    background-color: var(--dark-orange-btn-bg-color);
+    transform: scale(1.01)
 }
 
 /* section contact area================================== */
 main > .contact-area {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+main > .contact-area > * {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+main > .contact-area > .form-area {
+  margin: 3rem 0;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+fieldset > * {
+  width: 100%;
+}
+
+input,
+textarea {
+  border: solid 2px;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+form > button {
+  background-color: var(--blue);
+  width: 100%;
+  transition: background-color 0.2s, transform 0.2s;
+}
+form > button:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue);
+  transform: scale(1.01);
+}
+
+.contact-area > .contact-info-area > * {
+  margin: 1rem;
+}
+
+.contact-area > .contact-info-area > .icons-area {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-area > .contact-info-area > .icons-area > a {
+    /* background-color: var(--blue); */
+    width: 3rem;
+    /* height: 3rem; */
+    /* border-radius: 50%; */
+    /* text-decoration: none; */
+    transition: background-color 0.1s, transform 0.1s;
+}
+
+.contact-area > .contact-info-area > .icons-area > a >img{
+    object-fit: contain;
+    border-radius: 50%;
+    width: 48px;
+ 
+}
+
+.contact-area > .contact-info-area > p > a{
+    text-decoration: none;
+}
+
+.contact-area > .contact-info-area > p {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.contact-area > .contact-info-area > p img{
+    width: 2rem;
+}
+
+.contact-area > .contact-info-area > .icons-area > a:hover {
+  /* background-color: var(--dark-blue); */
+  transform: scale(1.12) rotate(-6deg);
 }
 
 /* footer area================================== */
 /* make footer sticky */
 footer {
   background-color: var(--footer-bg-color);
-  height: 57px;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
 @media (min-width: 901px) {
