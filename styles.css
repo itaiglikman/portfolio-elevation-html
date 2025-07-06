@@ -1,6 +1,6 @@
 :root {
   --blue: #2463eb;
-  --dark-blue: #2056E5;
+  --dark-blue: #2056e5;
   --footer-bg-color: #1e293b;
   --orange-btn-bg-color: #f59e0b;
   --grey-section-bg-color: #eaeef4;
@@ -101,11 +101,11 @@ main > .hero-area > .info-area button {
 /* add changed bg */
 main > .hero-area > .info-area button:hover {
   cursor: pointer;
-    background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 main > .hero-area > .profile-image-area {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 main > .hero-area > .profile-image-area > .image-container {
@@ -121,13 +121,58 @@ main > .hero-area > .profile-image-area > .image-container > img {
   /* Keep image aspect and fill container */
   object-fit: cover;
   /* Focus on right side of image */
-  object-position: 100% 50%; 
+  object-position: 100% 50%;
   border-radius: 50%;
 }
 
 /* section about area================================== */
 main > .about-area {
+  display: flex;
+  /* display wrap for small screens*/
+  flex-wrap: wrap;
+  text-align: center;
 }
+
+main > .about-area > * {
+  width: 100%;
+  padding: 0;
+}
+
+main > .about-area > .content-area > * ,
+main > .about-area > .skills-area > * {
+    /* set full width for wrapping in small screens*/
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+main > .about-area > .content-area{
+    margin-bottom: 2rem;
+}
+
+
+main > .about-area > .skills-area > .graph >div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.progress-bar {
+  height: 8px;
+  width: 30%;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background-color: var(--blue);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+
 
 /* section projects area================================== */
 main > .projects-area {
