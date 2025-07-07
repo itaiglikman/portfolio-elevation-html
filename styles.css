@@ -267,13 +267,6 @@ main > .section-container > .about-area > * {
   padding: 0;
 }
 
-/* set full width for wrapping in small screens*/
-/* main>.section-container > .about-area > .content-area > * ,
-main>.section-container > .about-area > .skills-area > * {
-    width: 100%;
-    margin-bottom: 1rem;
-} */
-
 main > .section-container > .about-area > .content-area {
   margin-bottom: 2rem;
 }
@@ -321,7 +314,6 @@ main > .section-container > .projects-area > .cards > * {
 }
 
 main > .section-container > .projects-area > .cards > .card {
-  height: 100%;
   min-height: 400px;
   max-width: 450px;
   display: flex;
@@ -333,7 +325,12 @@ main > .section-container > .projects-area > .cards > .card {
 
 .card-top,
 .card-bottom {
+  /* ensure both card parts have same size and grow as needed */
   flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-top {
@@ -356,21 +353,7 @@ main > .section-container > .projects-area > .cards > .card {
 
 .card-bottom {
   border-radius: 0 0 10px 10px;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.card-bottom > * {
-  margin-bottom: 0.5rem;
-}
-.card-bottom > div {
-  width: 100%;
-}
-
-.card-bottom a {
-  width: 100%;
+  padding: 1rem;
 }
 
 .card-bottom button {
@@ -378,6 +361,7 @@ main > .section-container > .projects-area > .cards > .card {
   background-color: var(--orange-btn-bg-color);
   transition: background-color 0.1s, transform 0.1s;
 }
+
 .card-bottom button:hover {
   cursor: pointer;
   background-color: var(--dark-orange-btn-bg-color);
@@ -390,6 +374,7 @@ main > .section-container > .contact-area {
   flex-wrap: wrap;
   text-align: center;
 }
+
 main > .section-container > .contact-area > * {
   width: 100%;
   margin-bottom: 1rem;
@@ -471,13 +456,14 @@ form > button:hover {
 }
 
 /* footer area================================== */
-/* make footer sticky */
 footer {
   background-color: var(--footer-bg-color);
   text-align: center;
   padding: 1rem;
 }
 
+
+/* large screens media=========================== */
 @media (min-width: 901px) {
   /* make burger icon disappear */
   header > .section-container > .header-section > .header-nav > .bar-icon {
