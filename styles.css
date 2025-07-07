@@ -21,21 +21,20 @@ html {
 }
 
 body {
-  max-width: 1200px;
-  min-width: 300px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
-  color: var(--body-grey-text-color);
   line-height: 1.6;
+  color: var(--body-grey-text-color);
+  min-width: 300px;
   display: flex;
   flex-direction: column;
 }
 
 button {
-  color: white;
   padding: 1rem;
   border-radius: 10px;
   border: none;
+  color: white;
   font-weight: bold;
 }
 
@@ -73,18 +72,34 @@ p.skill {
 }
 
 /* sections area================================== */
+.section-container {
+  margin: auto;
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.section-container.grey-bg {
+  background-color: var(--grey-section-bg-color);
+}
+
 section {
-  padding: 4rem 2rem;
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: auto;
 }
 
 /* header area================================== */
-header {
-  margin: 1rem 2rem;
+header > .section-container{
+padding: 0;
+}
+
+header > .section-container > .header-section {
   display: flex;
+  padding: 1rem 2rem;
   justify-content: space-between;
 }
 
-header > .dev-name > h3 {
+header > .section-container > .header-section > .dev-name > h3 {
   color: var(--blue);
 }
 
@@ -102,68 +117,77 @@ main {
   flex: 1;
 }
 
-main > .hero-area,
-main > .projects-area {
-  background-color: var(--grey-section-bg-color);
+main > .section-container:first-child {
+  box-shadow: 0px 30px 21px -34px rgba(0, 0, 0, 0.32) inset;
 }
 
 /* section hero area================================== */
-main > .hero-area {
-  box-shadow: 0px 30px 21px -34px rgba(0, 0, 0, 0.32) inset;
+main > .section-container > .hero-area {
+  /* box-shadow: 0px 30px 21px -34px rgba(0, 0, 0, 0.32) inset; */
   display: flex;
   /* display wrap for small screens*/
   flex-wrap: wrap;
   text-align: center;
 }
 
-main > .hero-area > * {
+main > .section-container > .hero-area > * {
   width: 100%;
   padding: 0;
 }
 
-main > .hero-area > .info-area,
-main > .hero-area > .profile-image-area {
+main > .section-container > .hero-area > .info-area,
+main > .section-container > .hero-area > .profile-image-area {
   /* set full width for wrapping in small screens*/
   width: 100%;
 }
 
-main > .hero-area > .info-area {
+main > .section-container > .hero-area > .info-area {
   display: flex;
   /* display wrap for small screens*/
   flex-wrap: wrap;
 }
 
-main > .hero-area > .info-area > * {
+main > .section-container > .hero-area > .info-area > * {
   /* set full width for wrapping in small screens*/
   width: 100%;
   margin-bottom: 1rem;
 }
 
-main > .hero-area > .info-area button {
+main > .section-container > .hero-area > .info-area button {
   background-color: var(--blue);
   padding: 1rem 2rem;
   transition: background-color 0.1s, transform 0.1s;
 }
 
 /* add changed bg */
-main > .hero-area > .info-area button:hover {
+main > .section-container > .hero-area > .info-area button:hover {
   cursor: pointer;
   background-color: var(--dark-blue);
   transform: scale(1.01);
 }
 
-main > .hero-area > .profile-image-area {
+main > .section-container > .hero-area > .profile-image-area {
   margin-top: 1rem;
 }
 
-main > .hero-area > .profile-image-area > .profile-image-container {
+main
+  > .section-container
+  > .hero-area
+  > .profile-image-area
+  > .profile-image-container {
   width: 40vw;
+  min-width: 200px;
   max-width: 300px;
   aspect-ratio: 1/1;
   margin: auto;
 }
 
-main > .hero-area > .profile-image-area > .profile-image-container > img {
+main
+  > .section-container
+  > .hero-area
+  > .profile-image-area
+  > .profile-image-container
+  > img {
   width: 100%;
   height: 100%;
   /* Keep image aspect and fill container */
@@ -174,30 +198,30 @@ main > .hero-area > .profile-image-area > .profile-image-container > img {
 }
 
 /* section about area================================== */
-main > .about-area {
+main > .section-container > .about-area {
   display: flex;
   /* display wrap for small screens*/
   flex-wrap: wrap;
   text-align: center;
 }
 
-main > .about-area > * {
+main > .section-container > .about-area > * {
   width: 100%;
   padding: 0;
 }
 
 /* set full width for wrapping in small screens*/
-/* main > .about-area > .content-area > * ,
-main > .about-area > .skills-area > * {
+/* main>.section-container > .about-area > .content-area > * ,
+main>.section-container > .about-area > .skills-area > * {
     width: 100%;
     margin-bottom: 1rem;
 } */
 
-main > .about-area > .content-area {
+main > .section-container > .about-area > .content-area {
   margin-bottom: 2rem;
 }
 
-main > .about-area > .skills-area > .graph > div {
+main > .section-container > .about-area > .skills-area > .graph > div {
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -220,26 +244,26 @@ main > .about-area > .skills-area > .graph > div {
 }
 
 /* section projects area================================== */
-main > .projects-area > * {
+main > .section-container > .projects-area > * {
   width: 100%;
   margin-bottom: 2rem;
 }
 
-main > .projects-area > .headline {
+main > .section-container > .projects-area > .headline {
   text-align: center;
 }
 
-main > .projects-area > .cards {
+main > .section-container > .projects-area > .cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-main > .projects-area > .cards > * {
+main > .section-container > .projects-area > .cards > * {
   margin-bottom: 2rem;
 }
 
-main > .projects-area > .cards > .card {
+main > .section-container > .projects-area > .cards > .card {
   height: 100%;
   min-height: 400px;
   max-width: 450px;
@@ -304,17 +328,17 @@ main > .projects-area > .cards > .card {
 }
 
 /* section contact area================================== */
-main > .contact-area {
+main > .section-container > .contact-area {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
 }
-main > .contact-area > * {
+main > .section-container > .contact-area > * {
   width: 100%;
   margin-bottom: 1rem;
 }
 
-main > .contact-area > .form-area {
+main > .section-container > .contact-area > .form-area {
   margin: 3rem 0;
 }
 
@@ -338,7 +362,7 @@ textarea {
   padding: 0.5rem;
 }
 
-main > .contact-area > .form-area > form > button {
+main > .section-container > .contact-area > .form-area > form > button {
   background-color: var(--blue);
   width: 100%;
   transition: background-color 0.2s, transform 0.2s;
@@ -399,31 +423,31 @@ footer {
 
 @media (min-width: 901px) {
   section {
-    padding: 2rem 4rem;
+    /* padding: 2rem 4rem; */
   }
 
-  main > .hero-area > .info-area,
-  main > .hero-area > .profile-image-area {
+  main > .section-container > .hero-area > .info-area,
+  main > .section-container > .hero-area > .profile-image-area {
     width: 50%;
     padding: 0;
   }
 
-  main > .hero-area > .info-area,
-  main > .about-area > .content-area {
+  main > .section-container > .hero-area > .info-area,
+  main > .section-container > .about-area > .content-area {
     text-align: left;
   }
-  main > .about-area > .content-area {
+  main > .section-container > .about-area > .content-area {
     width: 70%;
   }
-  main > .about-area > .skills-area {
+  main > .section-container > .about-area > .skills-area {
     width: 30%;
   }
 
-  main > .about-area > .content-area > p {
+  main > .section-container > .about-area > .content-area > p {
     padding-right: 3rem;
   }
 
-  main > .projects-area > .cards {
+  main > .section-container > .projects-area > .cards {
     width: 100%;
     justify-content: space-between;
   }
@@ -434,17 +458,17 @@ footer {
     width: 30%;
   }
 
-  main > .contact-area > .form-area {
+  main > .section-container > .contact-area > .form-area {
     margin-top: 0;
     width: 60%;
     text-align: left;
   }
 
-  main > .contact-area > .form-area > form > button {
+  main > .section-container > .contact-area > .form-area > form > button {
     width: fit-content;
   }
 
-  main > .contact-area > .contact-info-area {
+  main > .section-container > .contact-area > .contact-info-area {
     width: 40%;
     margin: 0;
     padding-top: 0;
@@ -452,11 +476,15 @@ footer {
     text-align: left;
   }
 
-  main > .contact-area > .contact-info-area > h3 {
+  main > .section-container > .contact-area > .contact-info-area > h3 {
     margin-top: 0;
   }
 
-  main > .contact-area > .contact-info-area > .info-details-container {
+  main
+    > .section-container
+    > .contact-area
+    > .contact-info-area
+    > .info-details-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
