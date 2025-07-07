@@ -260,6 +260,12 @@
                 menu.classList.remove('open');
             }
         });
+          // remove open class on large screen size:
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 901) {
+                document.getElementById('menu').classList.remove('open');
+            }
+        });
     </script>
 
 </body>
