@@ -115,10 +115,6 @@ header > .section-container > .header-section > .dev-name > h3 {
   color: var(--blue);
 }
 
-header > .section-container > .header-section > .header-nav {
-  /* position: relative; */
-}
-
 header > .section-container > .header-section > .header-nav > .menu {
     position: absolute;
     top: 100%;
@@ -132,12 +128,11 @@ header > .section-container > .header-section > .header-nav > .menu {
     border-width: 0 1px 1px 1px;
 }
 
-
 header > .section-container > .header-section > .header-nav > .bar-icon:hover {
-    cursor: pointer;
-    
+    cursor: pointer; 
 }
 
+/* disappear until click */
 header
 > .section-container
 > .header-section
@@ -166,17 +161,11 @@ header
     background-color: var(--body-grey-text-color);
 }
 
-/* header > .section-container > .header-section > .header-nav > .bar-icon:hover +
-header > .section-container > .header-section > .header-nav > .menu{
-    background-color: green;
-} */
-
+/* toggle class on click: */
 #menu.open {
   display: block;
 }
-/* .bar-icon:hover + #menu {
-  display: block;
-} */
+
 /* main area================================== */
 main {
   flex: 1;
