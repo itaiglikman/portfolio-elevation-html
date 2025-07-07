@@ -169,6 +169,8 @@ header
 
 /* main area================================== */
 main {
+  /* overcome the fixed header */
+  padding-top: 4rem;
   flex: 1;
 }
 
@@ -477,7 +479,6 @@ footer {
 }
 
 @media (min-width: 901px) {
-
   /* make burger icon disappear */
   header > .section-container > .header-section > .header-nav > .bar-icon {
     display: none;
