@@ -109,6 +109,7 @@ header > .section-container > .header-section {
   display: flex;
   padding: 1rem 2rem;
   justify-content: space-between;
+  align-items: center;
 }
 
 header > .section-container > .header-section > .dev-name > h3 {
@@ -116,49 +117,49 @@ header > .section-container > .header-section > .dev-name > h3 {
 }
 
 header > .section-container > .header-section > .header-nav > .menu {
-    position: absolute;
-    top: 100%;
-    right: 2rem;
-    width: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    border: solid;
-    border-width: 0 1px 1px 1px;
+  /* disappear until click */
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 2rem;
+  width: 6rem;
+  background-color: white;
+  border: solid;
+  border-width: 0 1px 1px 1px;
 }
 
 header > .section-container > .header-section > .header-nav > .bar-icon:hover {
-    cursor: pointer; 
-}
-
-/* disappear until click */
-header
-> .section-container
-> .header-section
-> .header-nav
-> .menu{
-    display: none;
+  cursor: pointer;
 }
 
 header
-> .section-container
-> .header-section
-> .header-nav
-> .menu
-> .menu-bar {
-    width: 100%;
-    padding: 0 0.5rem;
+  > .section-container
+  > .header-section
+  > .header-nav
+  > .menu
+  > .menu-bar {
+  width: 100%;
+  padding: 0 0.5rem;
 }
 
 header
-> .section-container
-> .header-section
-> .header-nav
-> .menu
-> .menu-bar:hover {
-    cursor: pointer;
-    background-color: var(--body-grey-text-color);
+  > .section-container
+  > .header-section
+  > .header-nav
+  > .menu
+  > .menu-bar
+  > a {
+  color: var(--body-grey-text-color);
+}
+
+header
+  > .section-container
+  > .header-section
+  > .header-nav
+  > .menu
+  > .menu-bar:hover {
+  cursor: pointer;
+  background-color: var(--grey-section-bg-color);
 }
 
 /* toggle class on click: */
@@ -476,8 +477,20 @@ footer {
 }
 
 @media (min-width: 901px) {
-  section {
-    /* padding: 2rem 4rem; */
+
+  /* make burger icon disappear */
+  header > .section-container > .header-section > .header-nav > .bar-icon {
+    display: none;
+  }
+
+  /* adjust menu */
+  header > .section-container > .header-section > .header-nav > .menu {
+    /* make it visible */
+    display: flex;
+    /* initial position */
+    position: static;
+    border: none;
+    width: 100%;
   }
 
   main > .section-container > .hero-area > .info-area,
