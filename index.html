@@ -10,7 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itai Glikman Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
+
 
 <body>
 
@@ -21,10 +24,22 @@
                     <h3>Itai Glikman</h3>
                 </div>
                 <nav class="header-nav">
-                    <div class="hamburger" title="Open menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div class="bar-icon" id="menu-toggle" title="Open menu">
+                        <i class="fa-solid fa-bars fa-2xl"></i>
+                    </div>
+                    <div class="menu" id="menu">
+                        <div class="menu-bar">
+                            <a href="#hero">home</a>
+                        </div>
+                        <div class="menu-bar">
+                            <a href="#about">about</a>
+                        </div>
+                        <div class="menu-bar">
+                            <a href="#projects">Projects</a>
+                        </div>
+                        <div class="menu-bar">
+                            <a href="#contact">Contact</a>
+                        </div>
                     </div>
                 </nav>
             </section>
@@ -33,7 +48,7 @@
 
     <main>
         <div class="section-container grey-bg">
-            <section class="hero-area">
+            <section class="hero-area" id="hero">
                 <div class="info-area">
                     <h2 class="headline">Full-Stack Developer</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa unde quasi quae placeat impedit
@@ -56,7 +71,7 @@
         </div>
 
         <div class="section-container">
-            <section class="about-area">
+            <section class="about-area" id="about">
                 <div class="content-area">
                     <h2>About Me</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, qui! Molestias totam laborum id
@@ -106,7 +121,7 @@
             </section>
         </div>
         <div class="section-container grey-bg">
-            <section class="projects-area">
+            <section class="projects-area" id="projects">
                 <div class="headline">
                     <h1>My Projects</h1>
                 </div>
@@ -168,7 +183,7 @@
         </div>
 
         <div class="section-container">
-            <section class="contact-area">
+            <section class="contact-area" id="contact">
 
                 <h1>Get In Touch</h1>
 
@@ -232,6 +247,20 @@
     <footer>© 2025 Itai Glikman. All rights reserved</footer>
 
 
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
+        //   open menu when clicking the burger icon
+        menuToggle.addEventListener('click', function () {
+            menu.classList.toggle('open');
+        });
+        //  close menu when clicking the burger icon
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
 
 </body>
 

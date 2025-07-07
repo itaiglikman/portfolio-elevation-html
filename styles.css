@@ -89,8 +89,20 @@ section {
 }
 
 /* header area================================== */
-header > .section-container{
-padding: 0;
+header {
+  /* make sticky header */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+header > .section-container {
+  padding: 0;
+  position: relative;
 }
 
 header > .section-container > .header-section {
@@ -103,15 +115,68 @@ header > .section-container > .header-section > .dev-name > h3 {
   color: var(--blue);
 }
 
-.hamburger {
-  width: 32px;
-  height: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
+header > .section-container > .header-section > .header-nav {
+  /* position: relative; */
 }
 
+header > .section-container > .header-section > .header-nav > .menu {
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    border: solid;
+    border-width: 0 1px 1px 1px;
+}
+
+
+header > .section-container > .header-section > .header-nav > .bar-icon:hover {
+    cursor: pointer;
+    
+}
+
+header
+> .section-container
+> .header-section
+> .header-nav
+> .menu{
+    display: none;
+}
+
+header
+> .section-container
+> .header-section
+> .header-nav
+> .menu
+> .menu-bar {
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+header
+> .section-container
+> .header-section
+> .header-nav
+> .menu
+> .menu-bar:hover {
+    cursor: pointer;
+    background-color: var(--body-grey-text-color);
+}
+
+/* header > .section-container > .header-section > .header-nav > .bar-icon:hover +
+header > .section-container > .header-section > .header-nav > .menu{
+    background-color: green;
+} */
+
+#menu.open {
+  display: block;
+}
+/* .bar-icon:hover + #menu {
+  display: block;
+} */
 /* main area================================== */
 main {
   flex: 1;
